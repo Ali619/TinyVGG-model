@@ -31,8 +31,6 @@ class tinyVGG(nn.Module):
     
     def forward(self, x):
         x = self.block_1(x)
-        # print(f"X shape after first layer: {x.shape}")
         x = self.block_2(x)
-        # print(f"X shape after second layer: {x.shape}")
         return(self.classifier_layer(x))
 

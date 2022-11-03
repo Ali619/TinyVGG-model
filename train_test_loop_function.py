@@ -58,3 +58,18 @@ def test_loop(model: torch.nn.Module,
         test_acc /= len(data)
 
     print(f"Test Loss: {test_loss:.5f}, Test Accuracy: %{test_acc:.2f}\n")
+
+train_loop(model=model_1,
+                data=train_dataloader,
+                optimizer=optimizer,
+                loss=loss_fn,
+                accuracy_fn=accuracy_fn,
+                device=device)
+    
+test_loop(model=model_1,
+            data=test_dataloader,
+            loss=loss_fn,
+            accuracy_fn=accuracy_fn,
+            device=device)
+
+print("\nTraining is Done")
